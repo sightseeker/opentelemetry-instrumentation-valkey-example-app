@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  valkey:
+    image: valkey/valkey:8.0@sha256:453a0af6b483eeb17673529755bffc5be55ee52f22bda16966a29b61a5154404
+    ports:
+      - 6379:6379
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.68.0@sha256:6279882637ae03e70f519965d2ba5ca84cb785f4baf4f0d7237e827a37c33a42
+    ports:
+      - 16686:16686
+      - 4317:4317

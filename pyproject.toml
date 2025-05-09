@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "valkey-example-app"
+version = "0.1.0"
+description = "Valkey + Jaeger tracing example application with OpenTelemetry"
+authors = ["Your Name <you@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+valkey = {extras = ["libvalkey"], version = "^6.1.0"}
+opentelemetry-api = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "opentelemetry-api" }
+opentelemetry-sdk = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "opentelemetry-sdk" }
+opentelemetry-proto = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "opentelemetry-proto" }
+opentelemetry-exporter-otlp-proto-common = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "exporter/opentelemetry-exporter-otlp-proto-common" }
+opentelemetry-exporter-otlp-proto-grpc = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "exporter/opentelemetry-exporter-otlp-proto-grpc" }
+opentelemetry-semantic-conventions = { git = "https://github.com/open-telemetry/opentelemetry-python", branch = "main", subdirectory = "opentelemetry-semantic-conventions" }
+opentelemetry-instrumentation = { git = "https://github.com/sightseeker/opentelemetry-python-contrib", subdirectory = "opentelemetry-instrumentation", branch = "feature/valkey" }
+opentelemetry-instrumentation-valkey = { git = "https://github.com/sightseeker/opentelemetry-python-contrib", subdirectory = "instrumentation/opentelemetry-instrumentation-valkey", branch = "feature/valkey" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
